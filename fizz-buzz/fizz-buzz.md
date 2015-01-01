@@ -8,6 +8,9 @@ Write a program that prints out the numbers from 1 to 100, each on a new line.
 
 ### Sample Output
 
+
+puts
+
 ```no-highlight
 1
 2
