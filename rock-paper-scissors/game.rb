@@ -17,7 +17,7 @@ computer = 0
 player = 0
 round = 1
 
-unless computer > 3 || player > 3
+while (computer + player) < 6 #best out of 6 not sure why || operator is not working here. 
   rock = 1
   paper = 1
   scissors = 1
@@ -73,10 +73,13 @@ unless computer > 3 || player > 3
   end
 end
 
+puts computer
+puts player
+
 if computer > player
-  puts "Computer wins with a score of 3"
+  puts "Computer wins with a score of #{computer}"
 else
-  puts "Player wins with a score of 3"
+  puts "Player wins with a score of #{player}"
 end
 
 
