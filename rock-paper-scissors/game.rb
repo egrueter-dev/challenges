@@ -13,11 +13,12 @@
 puts "Welcome to Rock, Paper, Scissors"
 
 
-computer = 0
-player = 0
-round = 1
+  computer = 0
+  player = 0
+  round = 1
 
-while (computer + player) < 6 #best out of 6 not sure why || operator is not working here. 
+while (computer + player) < 6 #best out of 6.. not sure why || operator is not working here.
+#while computer < 2 || player < 2 this waits untill both values reach 2... instead of either one.
   rock = 1
   paper = 1
   scissors = 1
@@ -31,6 +32,7 @@ while (computer + player) < 6 #best out of 6 not sure why || operator is not wor
     puts "please select from p, s or r"
     player_selection = gets.chomp
   end
+
   puts "Round.....#{round}"
   round += 1
 
@@ -71,6 +73,8 @@ while (computer + player) < 6 #best out of 6 not sure why || operator is not wor
   else
     puts "tie"
   end
+
+
 end
 
 puts computer
