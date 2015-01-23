@@ -94,8 +94,44 @@
 #     computer_selection = scissors
 #   end
 
+# puts
+# "
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Rock, Paper, Scissors - V 0.0.2 <<<<<<<<<<<<<<<<
+#
+#
+# # This new game includes:
+#
+# # 1. A way better way to get to a random selection for computer.
+# # 2. Fully defined players each with their own classes and expected behaviors.
+# # 3. A smaller more clean program that is stylistically correct.
+#
+# Lets get started!
+#
+# "
+class Game
+  def initialize # if this is correct, why must it be done this way?
+    @rock = rock
+    @paper = paper
+    @scissors = scissors
+  end
+
+  def rock
+    @rock > scissors
+    @rock < paper
+  end
+
+
+  def paper
+    @paper < scissors
+  end
+
+  def scissors
+    @scissors > paper
+  end
+end
 
 class Player
+
   def initialize(name)
     puts "New player named #{name} created."
   end
@@ -104,38 +140,41 @@ class Player
     @name = name
   end
 
-  def score
+  def score(score)
     @score = score
   end
 
-  def Ropos(value)
+  def player_selection(value)
     @play = value
     if @play == 'r'
-       return @play
+       @play = 'r'
     elsif @play == 's'
-       return @play
+       @play = 's'
     elsif @play == 'p'
-       return @play
+       @play = 'p'
     else
       puts "Please enter Rock(r), Paper(p), or Scissors(s), to continue"
     end
   end
 end
 
-class Computer
-  def initialize
+ class Computer
+   def initialize
+   end
 
-  end
+   def Score(value)
+     @score = 0 + value
+     puts @score
+   end
 
-  def comp_score
-    @comp_score = rand( )
-
+  def comp_selection
+    array = ['r','p','s'] #much better...
+    length = array.length
+    @comp_chose = array[rand(0..length -1)]
+    # puts @comp_chose
   end
 end
 
+erik = Player.new('erik')
 
-
-
-
-  player = Player.new('erik')
-  puts player.Ropos('t')
+game = Game.new
