@@ -4,13 +4,8 @@
 #
 # # This new game includes:
 #
-# # 1. A way better way to get to a random selection for computer.
-# # 2. Fully defined players each with their own classes and expected behaviors.
-# # 3. A smaller more clean program that is stylistically correct.
-#
-# Lets get started!
-#
-# "
+# # 1. A smarter way to get to a random selection for computer.
+# # 2. A smaller, cleaner program that is stylistically correct.
 
 
 player = 0
@@ -34,6 +29,7 @@ player_selection = gets.chomp
 
   if player_selection !='p' || player_selection !='s' || player_selection !='r'
     p "Please choose from either Paper (p) Rock (r) or Scissor (s)"
+    p "Round restarting....."
   end
     if (player_selection == 'p' && computer_selection == 's')
       p "Computer Wins with Scissors"
@@ -57,7 +53,7 @@ player_selection = gets.chomp
       p "Tie!"
       p "You both chose: #{computer_selection}"
     end
-  round += 1 #fix round issue
+  round += 1
 end
 
 puts "Final Scores:"
