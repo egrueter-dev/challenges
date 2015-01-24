@@ -1,6 +1,6 @@
 
 
-array = [28214, 63061, 49928, 98565, 31769, 42316, 23674, 3540, 34953, 70282, 22077, 94710, 50353, 17107, 73683, 33287, 44575, 83602, 33350, 46583]
+# array = [28214, 63061, 49928, 98565, 31769, 42316, 23674, 3540, 34953, 70282, 22077, 94710, 50353, 17107, 73683, 33287, 44575, 83602, 33350, 46583]
 
 # Write Ruby code to find out the answers to the following questions:
 ### * What is the sum of all the numbers in `array`?
@@ -65,7 +65,7 @@ array = [28214, 63061, 49928, 98565, 31769, 42316, 23674, 3540, 34953, 70282, 22
 # puts sum
 
 
- array = ["annamarie", "muriel", "drew", "reva", "belle", "amari", "aida", "kaylie", "monserrate", "jovan", "elian", "stuart", "maximo", "dennis", "zakary", "louvenia", "lew", "crawford", "caitlyn"]
+ #array = ["annamarie", "muriel", "drew", "reva", "belle", "amari", "aida", "kaylie", "monserrate", "jovan", "elian", "stuart", "maximo", "dennis", "zakary", "louvenia", "lew", "crawford", "caitlyn"]
 
 
 ## Write Ruby code to find out the answers to the following questions:
@@ -202,66 +202,138 @@ array = [28214, 63061, 49928, 98565, 31769, 42316, 23674, 3540, 34953, 70282, 22
 # end
 #   puts best_records
 
- ages = {"Arch"=>89, "Gretchen"=>93, "Simone"=>12, "Daija"=>96, "Alivia"=>22, "Serena"=>28, "Alek"=>3, "Lula"=>24, "Christian"=>62, "Darryl"=>47, "Otha"=>32, "Evalyn"=>44, "Lincoln"=>27, "Rebeca"=>99, "Beatrice"=>99, "Kelton"=>10, "Zachary"=>18, "Aurelie"=>91, "Dell"=>71, "Lisandro"=>22}
-#
+ # ages = {"Arch"=>89, "Gretchen"=>93, "Simone"=>12, "Daija"=>96, "Alivia"=>22,
+ #   "Serena"=>28, "Alek"=>3, "Lula"=>24, "Christian"=>62, "Darryl"=>47,
+ #  "Otha"=>32, "Evalyn"=>44, "Lincoln"=>27, "Rebeca"=>99, "Beatrice"=>99,
+ #  "Kelton"=>10, "Zachary"=>18, "Aurelie"=>91, "Dell"=>71, "Lisandro"=>22}
+
+
 # # Write Ruby code to find out the answers to the following questions:
 #
 # # * How would you print out all the names of `ages`?
-# # * How would you print out each key-value pair in the format of `<name> is <age> years old.`?
+
+# ages.each do |name,age|
+#   puts name
+# end
+
+## * How would you print out each key-value pair in the format of `<name> is <age> years old.`?
+#
+# ages.each do |name, age|
+#   puts "#{name} is #{age} years old"
+# end
+
+
+
 # # * How would you print out every person with odd numbered age?
+#
+# ages.each do |name, age|
+#   if age % 2 != 0
+#     puts name
+#   end
+# end
+
+
 # # * How would you delete everyone under 25 years of age?
+#
+# ages.each do |name, age|
+#   if age < 25
+#     ages.delete name
+#   end
+# end
+#
+# puts ages
+
 # # * What is the name and age of everyone with a name greater than or equal to 5 characters?
 #
-# people =
-# {
-#   "Alia O'Conner PhD" => {
-#          "phone" => "538.741.1841",
-#        "company" => "Leuschke-Stiedemann",
-#       "children" => [
-#           "Simone",
-#           "Cindy",
-#           "Jess"
-#       ]
-#   },
-#            "Ike Haag" => {
-#          "phone" => "(661) 663-8352",
-#        "company" => "Carter Inc",
-#       "children" => [
-#           "Joe",
-#           "Ofelia",
-#           "Deron"
-#       ]
-#   },
-#        "Brian Heller" => {
-#          "phone" => "1-288-601-5886",
-#        "company" => "O'Conner Group",
-#       "children" => [
-#           "Renee"
-#       ]
-#   },
-#        "Maryse Johns" => {
-#          "phone" => "218-571-8774",
-#        "company" => "Kuhlman Group",
-#       "children" => [
-#           "Dominick",
-#           "Tricia"
-#       ]
-#   },
-#   "Dr. Adela DuBuque" => {
-#         "phone" => "1-203-483-1226",
-#       "company" => "Heidenreich, Nietzsche and Dickinson"
-#   }
-# }
-#
+# ages.each do |name, age|
+#   if name.length > 5
+#     puts name, age
+#   end
+# end
+
+
+people =
+{
+  "Alia O'Conner PhD" => {
+         "phone" => "538.741.1841",
+       "company" => "Leuschke-Stiedemann",
+      "children" => [
+          "Simone",
+          "Cindy",
+          "Jess"
+      ]
+  },
+           "Ike Haag" => {
+         "phone" => "(661) 663-8352",
+       "company" => "Carter Inc",
+      "children" => [
+          "Joe",
+          "Ofelia",
+          "Deron"
+      ]
+  },
+       "Brian Heller" => {
+         "phone" => "1-288-601-5886",
+       "company" => "O'Conner Group",
+      "children" => [
+          "Renee"
+      ]
+  },
+       "Maryse Johns" => {
+         "phone" => "218-571-8774",
+       "company" => "Kuhlman Group",
+      "children" => [
+          "Dominick",
+          "Tricia"
+      ]
+  },
+  "Dr. Adela DuBuque" => {
+        "phone" => "1-203-483-1226",
+      "company" => "Heidenreich, Nietzsche and Dickinson"
+  }
+}
+
 # # Write Ruby code to find out the answers to the following questions:
 #
 # # * How would you print out all the names of `people`?
+#
+# people.each do |person,data|
+#   puts person
+# end
+
 # # * How would you print out all the names of `people` and which company they work for?
+
+# people.each do |person, data|
+#   puts "Person #{person} | Company: #{data["company"]}"
+# end
+
 # # * What are the names of all the children of everyone in `people`?
+#
+# people.each do |person, data|
+#   puts data["children"]
+# end
+
+
 # # What are the names of all the companies that people work for?
+
+# people.each do |person, data|
+#     puts data["company"]
+# end
+
+
 # # How would you convert all the phone numbers to the same standard (pick one)?
-#
-#
+
+# people.each do |person, data|
+#   new_phone = data["phone"].gsub(/\D/, '')
+#   # puts new_phone
+#     if new_phone.length > 10
+#       new_phone.slice!(0)
+#    end
+#    puts "1-" + new_phone.scan(/\d\d\d/).join('-')
+# end
+
+
+# 
 # people =
 # [
 #     {
@@ -319,11 +391,49 @@ array = [28214, 63061, 49928, 98565, 31769, 42316, 23674, 3540, 34953, 70282, 22
 #         }
 #     }
 # ]
-#
+
 # # Write Ruby code to find out the answers to the following questions:
-#
+
 # # * What are the names of everyone in `people`?
+
+# people.each do |chunks_of_data|
+#   chunks_of_data.each do |name, info|
+#     puts name
+#   end
+# end
+
 # # * What are the names of all the children in `people`?
+
+# people.each do |chunks_of_data|
+#   chunks_of_data.each do |name, info|
+#     puts info["children"]
+#   end
+# end
+
 # # * How would you create a new hash called `phone_numbers` that has a key of a name and value of a phone number in `people`?
+
+# people.each do |chunks_of_data|
+#   chunks_of_data.each do |name, info|
+#     puts phone_numbers = { name => info["phone"] }
+#   end
+# end
+
 # # * How would you create a new hash called `employers` that has a key of a name and a value of a company name in `people`?
+
+# people.each do |chunks_of_data|
+#   chunks_of_data.each do |name, info|
+#     puts employers = {name => info["company"]}
+#   end
+# end
+#
+
 # # * How would you create a new hash called `children_count` that has a key of a name and a value of the number of children a person has?
+
+# people.each do |chunks_of_data|
+#   chunks_of_data.each do |name, info|
+#     if info["children"] == nil
+#       info["children"] = []
+#     end
+#       puts children_count = {name => info["children"].count}
+#   end
+# end
