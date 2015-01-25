@@ -140,18 +140,26 @@
 # puts has_five_letters
 
 
-# best_records = {
-#  "Tupac"=>"All Eyez on Me",
-#  "Eminem"=>"The Marshall Mathers LP",
-#  "Wu-Tang Clan"=>"Enter the Wu-Tang (36 Chambers)",
-#  "Led Zeppelin"=>"Physical Graffiti",
-#  "Metallica"=>"The Black Album",
-#  "Pink Floyd"=>"The Dark Side of the Moon",
-#  "Pearl Jam"=>"Ten",
-#  "Nirvana"=>"Nevermind"
-#  }
+best_records = {
+ "Tupac"=>"All Eyez on Me",
+ "Eminem"=>"The Marshall Mathers LP",
+ "Wu-Tang Clan"=>"Enter the Wu-Tang (36 Chambers)",
+ "Led Zeppelin"=>"Physical Graffiti",
+ "Metallica"=>"The Black Album",
+ "Pink Floyd"=>"The Dark Side of the Moon",
+ "Pearl Jam"=>"Ten",
+ "Nirvana"=>"Nevermind"
+ }
 
 # #  Write Ruby code to find out the answers to the following questions:
+
+
+puts 'Which key-value pairs have a value that is greater than 10 characters? = '+ best_records.each_with_object([]) {|key, value| (key.to_s <= 10.to_s) }.to_s
+
+# # * Which artist has the longest name?
+
+puts best_records.each_with_object([]) {|key, value| (key.to_s <= 3.to_s)}.to_s
+
 
 # # * How would you print out all the names of the artists?
 
@@ -201,7 +209,7 @@
 #   end
 # end
 #   puts best_records
-
+ #
  # ages = {"Arch"=>89, "Gretchen"=>93, "Simone"=>12, "Daija"=>96, "Alivia"=>22,
  #   "Serena"=>28, "Alek"=>3, "Lula"=>24, "Christian"=>62, "Darryl"=>47,
  #  "Otha"=>32, "Evalyn"=>44, "Lincoln"=>27, "Rebeca"=>99, "Beatrice"=>99,
@@ -250,48 +258,49 @@
 #     puts name, age
 #   end
 # end
+# puts 'Which key-value pairs have a value that is greater than 10 characters? = ' + ages.each_with_object([]) {|key, value| (key.to_s <= 10.to_s) }.to_s
 
 
-people =
-{
-  "Alia O'Conner PhD" => {
-         "phone" => "538.741.1841",
-       "company" => "Leuschke-Stiedemann",
-      "children" => [
-          "Simone",
-          "Cindy",
-          "Jess"
-      ]
-  },
-           "Ike Haag" => {
-         "phone" => "(661) 663-8352",
-       "company" => "Carter Inc",
-      "children" => [
-          "Joe",
-          "Ofelia",
-          "Deron"
-      ]
-  },
-       "Brian Heller" => {
-         "phone" => "1-288-601-5886",
-       "company" => "O'Conner Group",
-      "children" => [
-          "Renee"
-      ]
-  },
-       "Maryse Johns" => {
-         "phone" => "218-571-8774",
-       "company" => "Kuhlman Group",
-      "children" => [
-          "Dominick",
-          "Tricia"
-      ]
-  },
-  "Dr. Adela DuBuque" => {
-        "phone" => "1-203-483-1226",
-      "company" => "Heidenreich, Nietzsche and Dickinson"
-  }
-}
+# people =
+# {
+#   "Alia O'Conner PhD" => {
+#          "phone" => "538.741.1841",
+#        "company" => "Leuschke-Stiedemann",
+#       "children" => [
+#           "Simone",
+#           "Cindy",
+#           "Jess"
+#       ]
+#   },
+#            "Ike Haag" => {
+#          "phone" => "(661) 663-8352",
+#        "company" => "Carter Inc",
+#       "children" => [
+#           "Joe",
+#           "Ofelia",
+#           "Deron"
+#       ]
+#   },
+#        "Brian Heller" => {
+#          "phone" => "1-288-601-5886",
+#        "company" => "O'Conner Group",
+#       "children" => [
+#           "Renee"
+#       ]
+#   },
+#        "Maryse Johns" => {
+#          "phone" => "218-571-8774",
+#        "company" => "Kuhlman Group",
+#       "children" => [
+#           "Dominick",
+#           "Tricia"
+#       ]
+#   },
+#   "Dr. Adela DuBuque" => {
+#         "phone" => "1-203-483-1226",
+#       "company" => "Heidenreich, Nietzsche and Dickinson"
+#   }
+# }
 
 # # Write Ruby code to find out the answers to the following questions:
 #
@@ -333,7 +342,7 @@ people =
 # end
 
 
-# 
+#
 # people =
 # [
 #     {

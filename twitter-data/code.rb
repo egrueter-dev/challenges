@@ -432,46 +432,76 @@ def twitter_data
     "location"=>"Boston, MA"}}]
 end
 
-twitter_data.each { |followers| puts "#{followers[:description]}" }
+# * Each username followed by its description. If there is no description (i.e., `nil` then print out "NA" instead):
 #
-# favorite_movies = [
-#   { title: 'The Big Lebowski', year_released: 1998, director: 'Joel Coen', imdb_rating: 8.2 },
-#   { title: 'The Shining', year_released: 1980, director: 'Stanley Kubrick', imdb_rating: 8.5 },
-#   { title: 'Troll 2', year_released: 1990, directory: 'Claudio Fragasso', imdb_rating: 2.5 }
-# ]
+# twitter_data.each do |accounts|
+#   accounts.each do |name, info|
+#     if info["description"] == nil
+#       info["description"] = "NA"
+#     end
+#       puts "#{name}: #{info["description"]}"
+#   end
+# end
+
+# * Each username followed by total number of followers:
 #
-# favorite_movies.each { |movie| puts "#{movie[:year_released]}: #{movie[:title]}" }
+# twitter_data.each do |accounts|
+#   accounts.each do |name, info|
+#     puts "#{name}: #{info["number of followers"]}"
+#   end
+# end
+
+# * Each username and the length of their latest tweet:
+
+# twitter_data.each do |accounts|
+#   accounts.each do |name, info|
+#     puts "#{name}'s latest tweet was #{info["latest tweet"].length} characters long!"
+#   end
+# end
 #
+# * Each username followed by the total character count used in that user's last twenty tweets:
+#
+# twitter_data.each do |accounts|
+#   accounts.each do |name, info|
+#     puts "#{name} used #{info["last twenty tweets"].join.length} characters in his last tweet."
+#   end
+# end
 
 
-{"alacritythief"=>
-  {"description"=>
-    "Web Developer + Illustrator. Web Engineer at @CogoLabs. Graduate of @LaunchAcademy_.",
-    "last twenty tweets"=>
-    ["Hey @TobitronKahn ! Send me an email to alacritystudios@gmail.com and I'll be happy to answer any questions you may have.",
-      "The game I made in JavaScript using Phaser.io on #shipitsaturday at @LaunchAcademy_ is now online, at http://t.co/HnpuJzjP3s. Enjoy!",
-      "Learning all the Pythons and the Djangos right now! On a more serious note, I'll blog soon about getting ENV variables in your Django app.",
-      "One sign of becoming a software developer: Typing \"g\" in your browser's address bar now autocompletes to GitHub instead of Gmail.",
-      "New Blog post: Weeks 9 &amp; 10 @ Launch Academy + Beyond… http://t.co/iyN4PexxtJ",
-      "I've been deep in Javascript and Node.js for the past week, with the help of this book: http://t.co/I8uiG8CK4W - Highly recommended.",
-      "It seems Vecna is attempting to attract otaku who are into healthcare &amp; robotics (Seen on an MBTA train). http://t.co/E5VnrlltcE",
-      "Photo: Seven Sovereigns page 2 - 2014 http://t.co/2DbhipFHi4",
-      "Photo: Seven Sovereigns page 1- 2014 More to come… http://t.co/qASi5q7cmg",
-      "Ask and ye shall receive: #CaturdayFuntime now has infinite scroll. Productivity worldwide has dropped another 15%. http://t.co/MXK5lHP8On",
-      "New Blog Post: Weeks 7 &amp; 8 @ Launch Academy: Caturday Funtime http://t.co/4kXbRKHv8e",
-      "My team's app project, \"Caturday Funtime\" is now live! GO SIGN UP and post and rate cats at https://t.co/SEsqHPnXiw ! Thanks @LaunchAcademy_",
-      "Apparently #Microsoft thinks odd numbers are bad luck now, so they cut their future losses with 9 and went straight to Windows 10.",
-      "My \"Ship-It Saturday\" web app, \"Ask the Duck!\" is online at http://t.co/bR4iXjzQBd! I had a lot of fun working on it! http://t.co/hov5cgrs0E",
-      "Made an app on #shipit Saturday! @LaunchAcademy_ http://t.co/d2mhdYELW2",
-      "New blog post: Week 6 @ Launch Academy: Sinatra vs Rails http://t.co/SlfEOBoTQy",
-      "New blog post: Week 5 @ Launch Academy - http://t.co/EQJQYSZjMR",
-      "New blog post: Week 4 Reflections @ Launch Academy -  http://t.co/NnzT6AeYLk",
-      "My thanks go to the neat people I met tonight at @bostonrb, and shoutouts go to @thehelenswanson, @dpickett, and @thoughtbot for hosting!",
-      "Caught David sleeping for #launcher_sleepy http://t.co/KLk2pqpYaR http://t.co/JjmP2EkViC"],
-      "number of followers"=>63,
-      "number of friends"=>47,
-      "latest tweet"=>
-      "Hey @TobitronKahn ! Send me an email to alacritystudios@gmail.com and I'll be happy to answer any questions you may have.",
-      "number of tweets"=>222,
-      "location"=>"Boston, MA"}}]
-    end
+#* Which user has the most followers?
+
+#how can i refactor this??
+# puts  best_records.each_with_object([]) {|key, value| (key.to_s <= 10.to_s) }.to_s
+
+# highest = 0
+#
+# twitter_data.each do |accounts|
+#
+#   accounts.each do |name, info|
+#
+#     if info["number of followers"] > highest
+#
+#     puts "#{name} has the most followers"
+#     highest = info["number of followers"]
+#
+#     end
+#   end
+# end
+
+#Which user has the most friends?
+
+arr = []
+
+twitter_data.each do |account|
+  account.each do |name, description|
+
+
+  end
+
+    # account.each do |name, description|
+    # followers = description.collect{ |i| description["number of followers"]}
+    # end
+
+end
+
+puts arr.sort
