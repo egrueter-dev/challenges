@@ -13,18 +13,8 @@ def twitter_data
       "RT @chrisccerami: @JustusEapen @LaunchAcademy_ @MarsCuriosity https://t.co/W6IBpIuIr0",
       "Come build some interesting projects! @womenwhocode Hack Night tomorrow. RSVP: http://t.co/wPgaQfQjVp http://t.co/sI5lIn9bJ9",
       "RT @SpencerCDixon: One of the greatest parts of being a developer is the massive amount of control you have over a computer. Feels very emp…",
-      "7 reasons to love Minitest for testing Ruby code: http://t.co/Qbq5Wtb3RC by @FluxusFrequency, a graduate from our friends @gschool",
-      "Interested in becoming a game developer? Here's how: http://t.co/xDJDzzFxA8 via @skilledup http://t.co/ir4GphhU3m",
-      "Web developer hiring trends, and what they mean for you: http://t.co/0Ajg7TdQFm by @walesmd http://t.co/coRokF42kA",
-      "RT @chrisccerami: I recently built my first API in Rails which I hope makes photos from Mars courtesy of @MarsCuriosity more accessible to …",
-      "Build things that last. Make sure your work lives beyond you. http://t.co/YMbuOwhY36 by @acolangelo",
-      "Thanks to everyone who came to Ship It! Saturday! Check out the latest blog post for a recap: http://t.co/EYSeUc87qQ http://t.co/pAG5x0GzTa",
-      "Write your code as if your best friend's inheriting it http://t.co/kbtLURrPcN by @MGraybosch http://t.co/JesBAjwIiB",
-      "Coding can improve the way we run the world. Old, but inspiring TED talk by @pahlkadot: http://t.co/mu7QqTZK6L http://t.co/Qol943YcX3",
-      "Practicing pitches and getting ready for Career Day, coming up on January 27th and 28th! http://t.co/fxCcFIIMTc",
-      "RT @lizvdk: The cool kids use GEOjson so I did too. Here's how I build it with Ruby: https://t.co/sXFTW9nzWb"],
-    "number of followers"=>3590,
-    "number of friends"=>699,
+      "7 reasons to love Minitest for testing Ruby code: http://t.co/Qbq5Wtb3RC by @FluxusFrequency, a graduate from our friends @gschool", "Interested in becoming a game developer? Here's how: http://t.co/xDJDzzFxA8 via @skilledup http://t.co/ir4GphhU3m",
+      "Web developer hiring trends, and what they mean for you: http://t.co/0Ajg7TdQFm by @walesmd http://t.co/coRokF42kA", "RT @chrisccerami: I recently built my first API in Rails which I hope makes photos from Mars courtesy of @MarsCuriosity more accessible to …", "Build things that last. Make sure your work lives beyond you. http://t.co/YMbuOwhY36 by @acolangelo", "Thanks to everyone who came to Ship It! Saturday! Check out the latest blog post for a recap: http://t.co/EYSeUc87qQ http://t.co/pAG5x0GzTa", "Write your code as if your best friend's inheriting it http://t.co/kbtLURrPcN by @MGraybosch http://t.co/JesBAjwIiB", "Coding can improve the way we run the world. Old, but inspiring TED talk by @pahlkadot: http://t.co/mu7QqTZK6L http://t.co/Qol943YcX3", "Practicing pitches and getting ready for Career Day, coming up on January 27th and 28th! http://t.co/fxCcFIIMTc", "RT @lizvdk: The cool kids use GEOjson so I did too. Here's how I build it with Ruby: https://t.co/sXFTW9nzWb"], "number of followers"=>3590, "number of friends"=>699,
     "latest tweet"=>
      "RT @chrisccerami: While learning web development I created a map of all of the shows @Screamales have played and damn @DonGiovanniRecs http…",
     "number of tweets"=>1433,
@@ -433,15 +423,14 @@ def twitter_data
 end
 
 # * Each username followed by its description. If there is no description (i.e., `nil` then print out "NA" instead):
-#
-# twitter_data.each do |accounts|
-#   accounts.each do |name, info|
-#     if info["description"] == nil
-#       info["description"] = "NA"
-#     end
-#       puts "#{name}: #{info["description"]}"
-#   end
-# end
+
+ # twitter_data.each do |accounts|
+ #   accounts.each do |name, info|
+ #     arr << info["number of followers"]
+ #     puts arr.max
+ #   end
+ #  end
+ # end
 
 # * Each username followed by total number of followers:
 #
@@ -488,20 +477,34 @@ end
 #   end
 # end
 
-#Which user has the most friends?
+# Which user has the most friends?
 
-arr = []
+# hash.each { |k, v| puts k if v == hash.values.max }
+
+# twitter_data.sort_by {|account|
+#   account.sort_by {|name, description|
+#
+#     # puts description["number of followers"].to_i
+#   array = []
+#   array << description["number of followers"].to_s
+#   puts array
+#     }}
+
+# hash2 = { 'erik' => 26, 'joe' => 46 }
+# puts hash2.class
+
+def most_friends(name, friends)
+  hash = {}
+  hash = {name => friends}
+  hash.each do |name, friends|
+  hash.sort_by { |name,friends| p friends.class }
+
+  end
+end
 
 twitter_data.each do |account|
   account.each do |name, description|
-
+    most_friends(name, description["number of friends"])
 
   end
-
-    # account.each do |name, description|
-    # followers = description.collect{ |i| description["number of followers"]}
-    # end
-
 end
-
-puts arr.sort
