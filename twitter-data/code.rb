@@ -493,18 +493,38 @@ end
 # hash2 = { 'erik' => 26, 'joe' => 46 }
 # puts hash2.class
 
-def most_friends(name, friends)
-  hash = {}
-  hash = {name => friends}
-  hash.each do |name, friends|
-  hash.sort_by { |name,friends| p friends.class }
+ hashy =
+ [
+  {:name => "LaunchAcademy_", :friends => 699},
+  {:name => "dpickett", :friends => 874},
+  {:name => "STWatkins78", :friends => 84},
+  {:name => "chrisccerami", :friends => 81},
+  {:name => "spencercdixon", :friends => 141},
+  {:name => "corinnebabbles", :friends => 439},
+  {:name => "dot_the_speck", :friends => 84},
+  {:name => "bostonrb", :friends => 9},
+  {:name => "judngu", :friends => 78},
+  {:name => "lizvdk", :friends => 234},
+  {:name => "hchood", :friends => 832},
+  {:name => "wand_chris", :friends => 73},
+  {:name => "julissaJM", :friends => 577},
+  {:name => "ashleytbasinger", :friends => 188},
+  {:name => "alacritythief", :friends => 47}
+ ]
+ # puts hashy
+ # puts hashy.sort_by! { |hash| hash[:friends] }
+ puts hashy.find {|x|  } #finish this by finding...
 
-  end
-end
 
-twitter_data.each do |account|
-  account.each do |name, description|
-    most_friends(name, description["number of friends"])
-
-  end
-end
+# def most_friends(name, friends)
+#   arr = []
+#   arr << {"name" => name,"friends" => friends}
+#   puts arr.sort_by { |hash| hash["friends"] }
+# end
+#
+# twitter_data.each do |account|
+#   account.each do |name, description|
+#     most_friends(name, description["number of friends"])
+#
+#   end
+# end
