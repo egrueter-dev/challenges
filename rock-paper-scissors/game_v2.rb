@@ -5,7 +5,6 @@ until (player["player"] >= 2 || player["comput"] >= 2)  #not sure why i need (
   puts "Please select Rock(r), Paper(p) or Scissors(s)"
   computer_s = defeats.keys.sample
   player_s = gets.chomp.to_sym
-
   if computer_s == defeats[player_s]
     player["comput"] += 1
   elsif player_s == defeats[computer_s]
