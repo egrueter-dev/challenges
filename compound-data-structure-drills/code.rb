@@ -119,62 +119,62 @@
 
 #people["Dr. Adela DuBuque"]["children"] = "Tomas"
 
-sets_of_people =
-[
-  {
-         "Bernard Feil" => {
-             "phone" => "(880) 434-0630",
-           "company" => "Maggio Inc",
-          "children" => [
-              "Nikki"
-          ]
-      },
-          "Ruby Hessel" => {
-             "phone" => "1-467-852-4981",
-           "company" => "Kemmer Inc",
-          "children" => [
-              "Sydney"
-          ]
-      },
-          "Savanah Toy" => {
-             "phone" => "440-632-0287",
-           "company" => "Hudson, Stehr and Lind",
-          "children" => [
-              "Garth"
-          ]
-      },
-      "Casandra Kemmer" => {
-            "phone" => "1-515-759-7470",
-          "company" => "Davis, Bernier and Hermann"
-      },
-             "Edd Rath" => {
-            "phone" => "(522) 829-3164",
-          "company" => "Mosciski LLC"
-      }
-  },
-  {
-         "Dagmar Brakus" => {
-             "phone" => "1-881-313-1173",
-           "company" => "Mitchell, Schmitt and Haley",
-          "children" => [
-              "Reuben"
-          ]
-      },
-         "Einar Effertz" => {
-            "phone" => "(265) 857-5141",
-          "company" => "Pfeffer, Klocko and Von"
-      },
-      "Dr. Sigrid Nader" => {
-             "phone" => "707.762.7870",
-           "company" => "Weissnat, Hayes and Dickinson",
-          "children" => [
-              "Israel",
-              "Elyse",
-              "Wilfredo"
-          ]
-      }
-  }
-]
+# sets_of_people =
+# [
+#   {
+#          "Bernard Feil" => {
+#              "phone" => "(880) 434-0630",
+#            "company" => "Maggio Inc",
+#           "children" => [
+#               "Nikki"
+#           ]
+#       },
+#           "Ruby Hessel" => {
+#              "phone" => "1-467-852-4981",
+#            "company" => "Kemmer Inc",
+#           "children" => [
+#               "Sydney"
+#           ]
+#       },
+#           "Savanah Toy" => {
+#              "phone" => "440-632-0287",
+#            "company" => "Hudson, Stehr and Lind",
+#           "children" => [
+#               "Garth"
+#           ]
+#       },
+#       "Casandra Kemmer" => {
+#             "phone" => "1-515-759-7470",
+#           "company" => "Davis, Bernier and Hermann"
+#       },
+#              "Edd Rath" => {
+#             "phone" => "(522) 829-3164",
+#           "company" => "Mosciski LLC"
+#       }
+#   },
+#   {
+#          "Dagmar Brakus" => {
+#              "phone" => "1-881-313-1173",
+#            "company" => "Mitchell, Schmitt and Haley",
+#           "children" => [
+#               "Reuben"
+#           ]
+#       },
+#          "Einar Effertz" => {
+#             "phone" => "(265) 857-5141",
+#           "company" => "Pfeffer, Klocko and Von"
+#       },
+#       "Dr. Sigrid Nader" => {
+#              "phone" => "707.762.7870",
+#            "company" => "Weissnat, Hayes and Dickinson",
+#           "children" => [
+#               "Israel",
+#               "Elyse",
+#               "Wilfredo"
+#           ]
+#       }
+#   }
+# ]
 
 # Write Ruby code to find out the answers to the following questions:
 
@@ -186,11 +186,58 @@ sets_of_people =
 # end
 # puts arr.count
 
-
-
 # * How many people are in the second set of people?
+
+# arr = []
+# sets_of_people[1].each do |name,data|
+#   arr << name
+# end
+# puts arr.count
+
 # * What is Ruby Hessel's phone number?
+
+# sets_of_people.each do |data| #why is this throwing an error?
+#   data.each do |name,desc|
+#     if name["Ruby Hessel"]
+#       puts desc["phone"]
+#     end
+#   end
+# end
+
 # * What are the names of Dr. Sigrid Nader's children?
+
+# sets_of_people.each do |data|
+#   data.each do |name, description|
+#     if name["Dr. Sigrid Nader"]
+#       puts description["children"]
+#     end
+#   end
+# end
+
 # * What is Bernard Feil's child's name?
+
+# sets_of_people.each do |data|
+#   data.each do |name, desc|
+#     if name["Bernard Feil"]
+#       puts desc["children"]
+#     end
+#   end
+# end
+
 # * What company does Casandra Kemmer work for?
+
+# sets_of_people.each do |data|
+#   data.each do |name, desc|
+#     if name["Casandra Kemmer"]
+#       puts desc["company"]
+#     end
+#   end
+# end
+
 # * Who are all the people in the first set that have an `m` in their Company names?
+
+# sets_of_people[1].each do |name, description|
+#   if description["company"].include?("m")
+#     puts name
+#   end
+# end
