@@ -116,13 +116,29 @@ best_records = {
 # puts best_records
 
 # * Is `Nirvana` included in `best_records`?
-
-# puts best_records.find_all { |artist| artist = "Nirvana"}
+#
+# if best_records["Nirvana"].empty? == false
+#   puts "Nirvana Is in best_records"
+# else
+#   puts "Nirvana is not in best_records"
+# end
 
 # * Is `Soundgarden` included in `best_records`?
 
- puts best_records.find {|artist| return "sds" if artist == "Nirvana"}
+#puts best_records.has_key?("Soundgarden")
+
 
 # * If `Soundgarden` is not in `best_records` then add a key-value pair for the band.
+ #
+ # if best_records.has_key?("Soundgarden") == false
+ #    best_records["Soundgarden"] = "In Your Arms"
+ # end
+ #
+
 # * Which key-value pairs have a key that has a length less than or equal to 6 characters?
+
+#best_records.each_key { |key| puts key if key.length <= 6 }
+
 # * Which key-value pairs have a value that is greater than 10 characters?
+
+#best_records.each_key { |key| puts key if key.length > 10 }
