@@ -25,7 +25,7 @@ sentence.each do |word|
   end
 end
 
-print sentence
+print sentence.join(" ")
 
 
 
@@ -33,4 +33,4 @@ print sentence
 end
 
 input = ARGV.join(" ")
-puts translate("happy days")
+puts translate("pig latin translator")
