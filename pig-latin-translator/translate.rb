@@ -7,11 +7,12 @@ def translate(sentence)
 #   # * If the word begins with a vowel
 #   # append *way* to the end of the word
 #   # (e.g. **egg** becomes **eggway**)
-#
+
+vowel = ("a","e","i","o","u")
 
 sentence = sentence.split(" ")
   sentence.each do |word|
-    if word.start_with?("a","e","i","o","u") == true
+    if word.start_with?(vowel) == true
       word << "way"
     elsif word.start_with?("a","e","i","o","u") == false
        con_chunk = word.scan(/[^aeiou]+/)[0]
