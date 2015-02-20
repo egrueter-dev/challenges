@@ -1,0 +1,15 @@
+<html>
+<body>
+<h1> Groceries </h1>
+<p><% groceries.each do |test| %></p>
+<p><li><%= test %></li></p>
+<p><% end %></p>
+
+<form action="/groceries" method="POST">
+  <input type="input" name="item">
+  <input type="submit">
+</form>
+
+</body>
+
+</html>
