@@ -1,0 +1,15 @@
+
+<h1> Recipe: <%= name %> </h1>
+<div>
+  <h2>Ingredients</h2>
+    <% ingredients.each do |i| %></p>
+      <li><%= i %></li>
+    <% end %>
+  <br>
+  <h2>Directions</h2>
+  <ol>
+    <% directions.each do |d| %></p>
+      <li><%= d %></li>
+    <% end %>
+  </ol>
+</div>

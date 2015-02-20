@@ -1,0 +1,16 @@
+Lesson Explanation:
+
+1. I initiated telnet like so:
+  telnet localhost 4567 on the running Sinatra server
+
+2.Once telnet was initiated, I specified the file I want to POST to
+  POST /ingredients HTTP/1.1
+
+3. I specified the host:
+  Host:localhost
+
+4. Then indicated the content length
+  Content-Length: 29
+
+5. I broke up the new data, separating the content with a "+"
+  ingredient=3/4+teaspoon+kosher+salt
