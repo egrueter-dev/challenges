@@ -1,0 +1,91 @@
+
+.container {
+  padding:50px
+}
+
+.header {
+  background-color:#ff6600;
+  padding:5px;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size:13px;
+  padding-right:30px;
+  padding-bottom:10px;
+  padding-top:10px;
+}
+
+.options {
+  font-size:10px;
+  font-family: Verdana, Geneva, sans-serif;
+  align:right;
+  display: inline;
+}
+
+.options p {
+  font-size:10px;
+  font-family: Verdana, Geneva, sans-serif;
+  align:right;
+  display: inline;
+}
+
+.left-login {
+  display:inline;
+  align:left;
+  padding-left:300px;
+  font-size:12px;
+}
+
+.article {
+  line-height:10px;
+  padding-left:10px;
+}
+
+.firstline p {
+  line-height: 1px;
+  display: inline;
+}
+
+.center-table {
+  font-family: Verdana, Geneva, sans-serif;
+  align:center;
+  background-color: #F6F6EF;
+  padding-bottom:500px;
+  padding-top:10px;
+}
+
+.subinfo {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 7pt;
+  color: #828282;
+  padding-left: 34px;
+}
+
+.article-name {
+  font-size: 10pt;
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+.source {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 8pt;
+  color: #828282;
+}
+.votearrow {
+  background: url("https://news.ycombinator.com/grayarrow.gif") no-repeat;
+}
+
+.count {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 10pt;
+  color: #828282;
+}
+
+.yc {
+  border-style: solid;
+  border-width: 1px;
+  border-color:white;
+  vertical-align:middle;
+}
+
+.title {
+  padding-bottom:10px;
+}

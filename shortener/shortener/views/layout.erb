@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700italic,300,400' rel='stylesheet' type='text/css'>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello World</title>
+    <link rel="stylesheet" href="/stylesheets/foundation.min.css" />
+    <link rel="stylesheet" href="/stylesheets/app.css" />
+
+  </head>
+<body>
+    <%= erb :_nav %>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <script src="/javascripts/app.js"></script>
+</body>
+</html>

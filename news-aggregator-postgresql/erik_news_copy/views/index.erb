@@ -1,0 +1,8 @@
+<p> Wecome to my news aggregator </p>
+<p><a href='/articles/new'>Create A New Article</a></p>
+
+<% article_data.each do |article| %>
+  <p><%= article["name"] %></p>
+  <p><%= article["url"] %></p>
+  <p><%= article["description"] %></p>
+<% end %>

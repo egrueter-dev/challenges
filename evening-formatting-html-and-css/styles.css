@@ -1,0 +1,21 @@
+div h1 {
+  text-align:left;
+}
+
+.navbar {
+  background-color: #FF6600;
+  font-size: 15px;
+  font-family: veranda, geneva, sans-serif;
+  display: inline;
+}
+
+.text {
+  background-color: #F6F6EF;
+  padding-bottom: 100px;
+  font-family: veranda, geneva, sans-serif;
+}
+
+.navbar h2 {
+  float: left;
+  font-family: courier, geneva, sans-serif;
+}

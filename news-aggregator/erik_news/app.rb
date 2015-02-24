@@ -2,7 +2,6 @@ require 'sinatra'
 require 'pry'
 require 'csv'
 
-#
 # def get_articles
 #   articles = []
 #   CSV.foreach('articles.csv', headers: true, header_converters: :symbol) do |row|
@@ -11,7 +10,6 @@ require 'csv'
 #   articles
 #   binding.pry
 # end
-
 
 def duplicate?(url_param)
   CSV.foreach('articles.csv', headers: true, header_converters: :symbol) do |row|
