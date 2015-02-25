@@ -40,7 +40,6 @@ end
 
 
 get '/' do
-
   @title = "Welcome to the Link Shortener!"
   short = ''
   long_url = first_long_url
@@ -50,21 +49,26 @@ get '/' do
   erb :index, locals: {short_url: short.to_a}
 end
 
-
 post "/" do
   long_url = params[:url]
   original_url(long_url)
   short_url = shortened_url(random_string)
+
   server_connect do |conn|
     conn.exec_params("INSERT INTO urls (long,short) VALUES ('#{long_url}','#{short_url}');")
   end
+
   redirect('/')
 end
 
-# get "/:url" do
-#   server_connect do |conn|
-#     #what message would i get from the db?
-#     url = conn.exec("SELECT long FROM urls WHERE short = '#{:url}';")
-#   end
-#   redirect("#{url}")
-# end
+get "/:url" do
+  server_connect do |conn|
+    #what message would i get from the db?
+    url = conn.exec("SELECT long FROM urls WHERE short = '/#{params["url"]}';")
+    binding.pry
+  end
+  redirect("#{url}")
+end
+
+#redirect to error if data does not exsist.
+#if url is
