@@ -30,25 +30,26 @@ def shortened_url(string)
 end
 
 def long_url(params)
-  params_string = "?"
-    params.each do |url\
-      
-    end
+  @params = params
+end
 
+def long_url_final
+  @params
 end
 
 get '/' do
   @title = "Welcome to the Link Shortener!"
   short = ''
+  long =
   server_connect do |conn|
-    short = conn.exec("SELECT short FROM urls;")
-    binding.pry
+    short = conn.exec("SELECT short FROM urls WHERE long='#{long_url_final}';")
   end
-  erb :index, locals: {short_url: short.to_a}
+  erb :index, locals: { short_url: short.to_a }
 end
 
 post "/" do
   long_url = params[:url]
+  long_url(long_url)
   short_url = shortened_url(random_string)
   server_connect do |conn|
     conn.exec_params("INSERT INTO urls (long,short) VALUES ('#{long_url}','#{short_url}');")
@@ -56,12 +57,14 @@ post "/" do
   redirect('/')
 end
 
-get "/:url" do
-  server_connect do |conn|
-    url = conn.exec("SELECT long FROM urls WHERE short = '/#{params["url"]}';")
-  end
-    redirect("#{url}")
-end
+# get "/:url" do
+#   url_final = ''
+#   server_connect do |conn|
+#     url_final = conn.exec("SELECT long FROM urls WHERE short = '/#{params["url"]}';")
+#     binding.pry
+#   end
+#     redirect("#{url_final}")
+# end
 
 #redirect to error if data does not exsist.
 #if url is
