@@ -7,6 +7,13 @@ configure do
   set :public_folder, 'public'
 end
 
+users = [
+
+  {first_name: 'Joe'},
+  {last_name: 'John'}
+
+]
+
 def random_dishes
   DISHES.sample
 end
@@ -22,7 +29,6 @@ get "/dishes.json" do
   { dishes: random_dishes }.to_json
 
 end
-
 
 DISHES = [
 "Roasted Brussels Sprouts",

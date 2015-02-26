@@ -39,10 +39,10 @@ end
 
 get '/' do
   @title = "Welcome to the Link Shortener!"
-  short = ''
-  long =
+  short = nil
+  # long = long_url_final
   server_connect do |conn|
-    short = conn.exec("SELECT short FROM urls WHERE long='#{long_url_final}';")
+    short = conn.exec("SELECT short from urls WHERE long='www.google.com';")
   end
   erb :index, locals: { short_url: short.to_a }
 end
@@ -60,11 +60,7 @@ end
 # get "/:url" do
 #   url_final = ''
 #   server_connect do |conn|
-#     url_final = conn.exec("SELECT long FROM urls WHERE short = '/#{params["url"]}';")
-#     binding.pry
+    #url_final = conn.exec("SELECT long FROM urls WHERE short = '/#{params["url"]}';")
 #   end
 #     redirect("#{url_final}")
 # end
-
-#redirect to error if data does not exsist.
-#if url is
