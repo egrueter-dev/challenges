@@ -1,6 +1,5 @@
-$(function() {
 
-var $addContentButton = $('#add-content')
-debugger;
-
+$("#input").on("submit", function(event){
+  event.preventDefault();
+    $""  
 });
