@@ -1,5 +1,10 @@
+//what is the purpose of the open function?
 
-$("#input").on("submit", function(event){
-  event.preventDefault();
-    $""  
+$(function() {
+
+  $("#input_form").on('submit', function(event){
+    var input = $('#text_field').val();
+    console.log(input);
+    
+  });
 });

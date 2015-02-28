@@ -51,8 +51,12 @@ h2 {
   font-family: 'Lato', sans-serif;
 }
 
-/* Unleash the Power of: */
-font-family: Lato-BoldItalic;
-font-size: 48px;
-color: #4E8EAF;
-line-height: 57px;
+.inner {
+  /*display: none;*/
+  background-color: coral;
+  text-align: center;
+  border: aqua;
+  padding-top: 5px;
+  height: 40px;
+}
+}
