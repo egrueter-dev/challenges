@@ -27,31 +27,31 @@ def random_string
 end
 
 def shortened_url(string)
-  short_url = ("http://www.website/" + string)
+  short_url = "/" + string
+  #change this to production url
 end
 
-def create_redirect_url(url_final)
-  redirect_url = "http://" + "#{url_final.to_a[0]["long"]}"
-end
-
-def insert_urls(long_url,short_url)
+def insert_urls(long_url, short_url)
   server_connect do |conn|
-    conn.exec_params("INSERT INTO urls (long,short) VALUES ('#{long_url}','#{short_url}');")
+    binding.pry
+    conn.exec_params("INSERT INTO urls (long,short) VALUES ($1,$2);", [long_url, short_url])
   end
 end
 
-def select_url(short_or_long,long_or_short,ref_url)
-  "SELECT #{short_or_long} from urls WHERE #{long_or_short}='#{ref_url}';"
+def select_url(conn, short_or_long, long_or_short, ref_url)
+  #bring in the "server connect do" code to reduce lines further
+  conn.exec_params("SELECT #{short_or_long} from urls WHERE #{long_or_short}= $1;",
+    [ref_url])
 end
 
 get '/' do
   @title = "Welcome to the Link Shortener!"
-  short = []
+  short = nil
   long = params.to_a
   if !long.empty?
     long_url = long[0][0]
     server_connect do |conn|
-      short = conn.exec(select_url("short","long",long_url))
+      short = select_url(conn, "short", "long", long_url)
     end
   final_short = short.first["short"]
   end
@@ -68,8 +68,9 @@ end
 get "/:url" do
  url_final = ''
  server_connect do |conn|
-   url_final = conn.exec(select_url("long","short",params[:url]))
+   # Refactor to use exec_params (with $1 and array of parameters)
+   url_final = conn.exec("SELECT long FROM urls where short='/#{params[:url]}';")
  end
-   redirect_url = create_redirect_url(url_final)
-   redirect("#{redirect_url}")
+  redirect_url = url_final.first["long"]
+  redirect("http://#{redirect_url}")
 end

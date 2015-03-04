@@ -1,0 +1,22 @@
+<h1><%= @title %></h1>
+
+<h2>Begin the game, put in your value.</h2>
+
+<div>
+  <% if !session_alert %>
+  <form action="/newgame" method="post">
+    <p> Insert Guess </p>
+    <br>
+    <input type ="text" name="guess"></input>
+    <input type ="submit"></input>
+  </form>
+    <p> Computer Score <%= comp_score %></p>
+    <p> Player Score   <%= player_score %></p>
+  <% end %>
+  <p><% if tie %></p>
+  <p><%= tie %></p>
+    <p><% end %></p>
+  <p><% if session_alert %></p>
+    <p><%= session_alert %><a href="/newgame"> Play again!!!!! </a></p>
+  <p><% end %></p>
+<div>
