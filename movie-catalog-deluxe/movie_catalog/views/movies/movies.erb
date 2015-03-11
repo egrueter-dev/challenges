@@ -1,0 +1,9 @@
+<h1>Movies</h1>
+<h2>Movies (link to id specific page.)</h2>
+<p><% movies.each do |movie| %></p>
+<p>Title: <%= movie["title"] %>, Year: <%= movie["year"] %>, Rating: <%= movie["rating"] %></p>
+<p>Studio Name: <%= studio_name %>, Genre: <%= genres %></p>
+<p>Synopsis:</p>
+<br>
+<p><%= movie["synopsis"] %>
+<p><% end %></p>

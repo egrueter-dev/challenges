@@ -1,0 +1,9 @@
+<h2> Client Management </h2>
+<a href="/"> Home </a>
+<br>
+<p> This is where clients will be displayed</p>
+
+<% @clients.each do |client| %>
+<p>ID: <%= client["id"] %>, <%= client["name"] %>, <%= client["project"] %></p>
+<% end %>
+<a href="/clients/new">Create a new client</a>

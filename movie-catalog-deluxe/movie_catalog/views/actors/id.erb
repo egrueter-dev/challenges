@@ -1,0 +1,5 @@
+<h4>Movies <%= actor_name %> Starred In:</h4>
+<p><b>Movies</b></p>
+<p><% movie_title.each do |movie| %>
+<p><a href="/movies/<%= movie["mid"]%>"><%= movie["title"] %></a></p>
+<% end %>

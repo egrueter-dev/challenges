@@ -1,0 +1,7 @@
+<h1>Actors</h1>
+<h2>Actors (link to id specific page for each actor</h2>
+<p>
+<% actors.each do |actor| %>
+  <p><a href=""><%= actor["name"] %> - <%= actor["id"] %></a></p>
+<% end %>
+</p>

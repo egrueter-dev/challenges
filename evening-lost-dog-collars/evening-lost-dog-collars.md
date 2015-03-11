@@ -119,6 +119,6 @@ ON lost_dog_collars.dog_name = dog_owners.dog_name;
 
 CROSS JOIN
 
-SELECT dog_owners.name, lost_dog_collars.id
+SELECT dog_owners.name, lost_dog_collars.id, lost_dog_collars.dog_name
 FROM lost_dog_collars
 CROSS JOIN dog_owners;

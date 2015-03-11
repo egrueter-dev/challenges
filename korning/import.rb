@@ -56,7 +56,7 @@ def insert_customers
     end
   end
 end
-
+Ko
 insert_customers
 
 def insert_products

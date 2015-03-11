@@ -7,14 +7,6 @@ use Rack::Session::Cookie, {
   secret: "keep_it_secret_keep_it_safe"
 }
 
-# def generate_hmac(data, secret)
-#   OpenSSL::HMAC.hexdigest(OpenSSL::Digest::SHA1.new, secret, data)
-# end
-#
-# def decode_session(str)
-#   Marshal.load(URI.decode_www_form_component(str).unpack("m").first)
-# end
-
 enable :sessions
 
 get '/' do
@@ -28,8 +20,6 @@ def reset_number
 end
 
 post '/newgame' do
-
-  # params_values = params["text"]
   redirect("/newgame?#{params["guess"]}")
 end
 
@@ -58,11 +48,9 @@ get '/newgame' do
     player_score = params.first.first
     player_s = player_score.to_sym
   end
-
   if player_s != :r || player_s != :s || player_s != :p
     session[:alert] = "Invalid"
   end
-
   player = { "player" => 0, "comput" => 0 }
   defeats = { :r => :p, :p => :s, :s => :r }
   computer_s = defeats.keys.sample
@@ -71,16 +59,14 @@ get '/newgame' do
   not_valid = nil
 
   if computer_s == defeats[player_s]
-      player["comput"] += 1
+    player["comput"] += 1
 
   elsif player_s == defeats[computer_s]
-    	player["player"] += 1
+    player["player"] += 1
 
   else computer_s == player_s
-    	output = "tie"
+    output = "tie"
   end
-
-  #validate input
 
   scores_calculator(player["player"], player["comput"])
 

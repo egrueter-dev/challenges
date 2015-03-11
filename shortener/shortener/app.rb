@@ -12,6 +12,7 @@ Dir[File.join(File.dirname(__FILE__), 'lib', '**', '*.rb')].each do |file|
   also_reload file
 end
 
+
 def server_connect
   begin
     connection = PG.connect(dbname:"url_shortener")
@@ -20,6 +21,14 @@ def server_connect
     connection.close
   end
 end
+
+enable :sessions
+
+#######################
+
+# GENERATING SHORT URL
+
+#######################
 
 def random_string
   random_string = ('a'..'z').to_a.shuffle.first(4).join
@@ -30,6 +39,12 @@ def shortened_url(string)
   short_url = "/" + string
   #change this to production url
 end
+
+#########################
+
+# DATABASE
+
+#########################
 
 def insert_urls(long_url, short_url)
   server_connect do |conn|
@@ -44,6 +59,16 @@ def select_url(conn, short_or_long, long_or_short, ref_url)
     [ref_url])
 end
 
+def insert_user(email,password)
+
+end
+
+######################
+
+# CONTROLLERS
+
+######################
+
 get '/' do
   @title = "Welcome to the Link Shortener!"
   short = nil
@@ -55,15 +80,65 @@ get '/' do
     end
   final_short = short.first["short"]
   end
+
+  # Select all urls from the database with associated userid, and display below.
+  # Upon submission send url & associated ID to the db.
+  # Final step - JS displays all data.
+
   erb :index, locals: { short_url: final_short, long_url: long_url }
 end
 
+####################
+
+# SIGN UP
+
+####################
+
+get "/sign_up" do
+  erb :signup
+end
+
+post "/sign_up" do
+
+# Enables session for user.
+
+session[:email] = params["textinput"]
+session[:password] = params["passwordinput"]
+
+# Adds new user to db (if one does not already exist, if it does, throw an error
+  server_connect do |conn|
+    result = conn.exec_params("SELECT users_id FROM users WHERE email = $1", [params]"textinput"]])
+    # If sign in does work, redirect to the links page, show links for sign_ins here.
+    if result.to_a.empty?
+      conn.exec_params("INSERT INTO users (email,password) VALUES ($1,$2)", [params["textinput"], params["passwordinput"]])
+      redirect("/")
+    end
+
+    # If redirect does not work - display an alert to the user. (Use JS?)
+
+  end
+end
+
+####################
+
+# Posting new URL
+
+####################
+
 post "/" do
+
   long_url = params[:url]
   short_url = shortened_url(random_string)
   insert_urls(long_url,short_url)
   redirect("/?#{long_url}")
+
 end
+
+#####################
+
+# REDIRECT
+
+#####################
 
 get "/:url" do
  url_final = ''

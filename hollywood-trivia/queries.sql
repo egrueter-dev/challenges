@@ -33,12 +33,23 @@ WHERE movies.synopsis LIKE '%thrilling%';
 
 -- YOUR QUERY HERE
 
-SELECT movies.title, movies.year, movies.rating, genres.id
-FROM movies
-JOIN genres
-ON genres.id = movies.genre_id
-WHERE movies.year BETWEEN 1980 AND 1989
-AND genres.name = 'Science Fiction & Fantasy'
+## working ##
+
+SELECT ingredients.name, recipes.name, recipes.instructions, recipes.id, recipes.description, recipes.id
+FROM ingredients
+JOIN recipes
+  ON recipes.id = ingredients.recipe_id;
+
+
+  SELECT ingredients.name AS ingredient_name, recipes.name AS recipe_name, recipes.instructions, recipes.description, recipes.id
+  FROM ingredients
+  JOIN recipes
+    ON recipes.id = ingredients.recipe_id
+  ORDER BY recipes.name;
+
+## working ## 
+
+#sort alphabetically
 ORDER BY movies.rating DESC;
 
 -- 5. What actors have starred as James Bond? The results should
@@ -50,9 +61,9 @@ ORDER BY movies.rating DESC;
 SELECT actors.name, movies.title, movies.year, cast_members.character
 FROM movies
 JOIN cast_members
-ON cast_members.movie_id = movies.id
+  ON cast_members.movie_id = movies.id
 JOIN actors
-ON cast_members.actor_id = actors.id
+  ON cast_members.actor_id = actors.id
 WHERE cast_members.character LIKE '%James Bond%'
 ORDER BY movies.year;
 
@@ -80,10 +91,7 @@ WHERE actors.name LIKE 'Julianne Moore%';
 
 SELECT movies.title, movies.year, studios.name
 FROM movies
-JOIN genres
-ON genres.id = movies.genre_id
+ JOIN genres
+  ON genres.id = movies.genre_id
 JOIN studios
-ON movies.studio_id = studios.id
-WHERE genres.name LIKE 'Horror'
-ORDER BY movies.year
-LIMIT 5;
+  ON movies.studio_id = studios.id

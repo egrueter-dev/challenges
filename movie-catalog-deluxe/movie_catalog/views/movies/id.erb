@@ -1,0 +1,7 @@
+<h4>Movie: <%= movie_title[0]["title"] %> </h4>
+<p> Studio Name: <%= studio_name %></p>
+<p> Year: <%= movie_year %> </p>
+<h3> Cast: </h3>
+<p><% cast_information.each do |actor| %></p>
+<p><a href="/actors/<%= actor["id"]%>"><%= actor["actors"] %></a></p>
+<p><% end %>

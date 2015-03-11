@@ -4,9 +4,15 @@
 
 -- DROP TABLE IF EXISTS articles;
 
-CREATE TABLE urls (
-	--   <column definitions go here>
-	  long varchar(300),
-	  short varchar(300)
+CREATE TABLE users (
+	user_id serial PRIMARY KEY,
+	email varchar (300) NOT NULL UNIQUE,
+	password varchar (300) NOT NULL UNIQUE
+);
 
-	);
+CREATE TABLE urls (
+	url_id serial PRIMARY KEY,
+	long varchar(300) NOT NULL UNIQUE,
+	short varchar(300) NOT NULL UNIQUE
+	user_id integer REFERENCES urls(url_id)
+);

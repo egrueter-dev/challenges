@@ -1,0 +1,7 @@
+<h1> This is where plans known to stripe are displayed</h1>
+<p> Draw on stripe API for data </p>
+<p> Name of plan to be added automatically based on client used. </p>
+<p><a href="plans/new">Create a plan</a></p>
+<p><% @plans.each do |plan| %></p>
+<p><b>Name</b> <%= plan["name"] %> <b>ID:</b> <%= plan["id"] %> <b>Amount</b> <%= plan["amount"] %></p>
+<p><% end %></p>
