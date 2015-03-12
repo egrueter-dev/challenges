@@ -7,7 +7,6 @@ class Recipe
     @description = recipe_description
     @instructions = recipe_instructions
     @ingredients = ingredient_class
-
   end
 
   def ingredients
@@ -30,8 +29,12 @@ class Recipe
     @name
   end
 
+  def self.db_connection
+      connection = PG.connect(dbname: "recipes")
+  end
+
   def self.all
-    connection = PG.connect(dbname: "recipes")
+    self.db_connection
     recipes = connection.exec_params("SELECT * from recipes")
     recipe_all = recipes.to_a
     recipe_list = []
@@ -41,14 +44,10 @@ class Recipe
     recipe_list
   end
 
-  def find_with_params
-
-  end
 
   def self.find(params_id)
-    connection = PG.connect(dbname: "recipes")
+    self.db_connection
     recipe_id_check = connection.exec_params("SELECT recipes.name FROM recipes WHERE recipes.id='#{params_id}';").to_a
-
     if recipe_id_check == []
       @recipe = Recipe.new("Not Present", "This recipe doesn't have a description.", "This recipe doesn't have a description.", "This recipe doesn't have any instructions.", [])
     else
