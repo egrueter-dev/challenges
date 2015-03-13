@@ -1,0 +1,5 @@
+require_relative '../models/card'
+require_relative '../models/deck'
+require_relative '../models/hand'
+require_relative '../models/human'
+require_relative '../models/dealer'
